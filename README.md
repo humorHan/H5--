@@ -40,6 +40,15 @@ video标签是一个比较坑的地方，相关内容并没有统一。 主要�
 </div>
 //这种方案能够实现，点击一个自定义的播放按钮，然后进行播放！ 只有video的父标签注册点击事件，在IOS下调用play事件才好使！！
 ```
+当然，在微信下的话有更好的解决方案，其他诸如浏览器待测试
+
+```
+document.getElementById('audio').play();
+        //必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            document.getElementById('audio').play();
+        }, false);
+```
 
 另外一个坑的地方是取消ios默认的播放按钮样式：
 
