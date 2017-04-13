@@ -44,10 +44,10 @@ video标签是一个比较坑的地方，相关内容并没有统一。 主要�
 
 ```
 document.getElementById('audio').play();
-    //必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效
-    document.addEventListener("WeixinJSBridgeReady", function () {
-        document.getElementById('audio').play();
-    }, false);
+//必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效
+document.addEventListener("WeixinJSBridgeReady", function () {
+    document.getElementById('audio').play();
+}, false);
 ```
 
 另外一个坑的地方是取消ios默认的播放按钮样式：
