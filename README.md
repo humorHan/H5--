@@ -71,18 +71,8 @@ video::-webkit-media-controls-start-playback-button {
     user-select: none; /* Standard syntax */
     
     
-    
-##### 清除手机tap事件后element 时候出现的一个高亮
+## 清除手机tap事件后element 时候出现的一个高亮
 	
 	*{
 		-webkit-tap-highlight-color: rgba(0,0,0,0);
-	}
-    
-    ##### `webkit-playsinline `
-手机video 都可以在页面中播放，而不是全屏播放了。
-
-	<video id="myvideo" src="test.mp4" webkit-playsinline="true"></video>
-
-
-    
-    
+	}     
