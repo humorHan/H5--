@@ -72,7 +72,19 @@ video::-webkit-media-controls-start-playback-button {
     
     
 ## 清除手机tap事件后element 时候出现的一个高亮
-	
+	 
 	*{
 		-webkit-tap-highlight-color: rgba(0,0,0,0);
-	}     
+	}   
+	 
+## IOS下部分机型不支持  background-attachment: fixed;
+
+```
+   #bg{
+	background: url(../img/loading.jpg) no-repeat fixed center;
+   } 
+
+```
+	
+	    
+	    
