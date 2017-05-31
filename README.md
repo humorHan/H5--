@@ -33,6 +33,7 @@ transform: rotate3d(0, 0, 1, -360deg);
 
 video标签是一个比较坑的地方，相关内容并没有统一。 主要是ios的video标签，是不能够进行自动播放，主动点击播放的方案如下：
 
+##### 探索办法一：
 ```
 <div class="video-wrapper" onclick="document.getElementById('vId').play()">
     <a href="javascript:void(0);" class="play-btn"></a>
@@ -42,12 +43,24 @@ video标签是一个比较坑的地方，相关内容并没有统一。 主要�
 ```
 当然，在微信下的话有更好的解决方案，其他终端待测试...
 
+##### 进阶办法二
 ```
 document.getElementById('audio').play();
 //必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效
 document.addEventListener("WeixinJSBridgeReady", function () {
     document.getElementById('audio').play();
 }, false);
+```
+##### 终极办法
+
+```
+ wx.getNetworkType({
+                success: function (res) {
+                    document.getElementById('video').play();
+                    document.getElementById('video').pause();
+                }
+           });
+
 ```
 
 另外一个坑的地方是取消ios默认的播放按钮样式：
@@ -58,11 +71,16 @@ video::-webkit-media-controls-start-playback-button {
 }
 ```
 
-默认IOS的video标签是点击完成之后就会全屏播放的，IOS10中添加了，新的inline播放方式，设置如下：
+默认IOS的video标签是点击完成之后就会全屏播放的，IOS10中添加了，新的inline播放方式，顺带兼容全屏设置如下：
 
 ```html
-<video id="player" width="480" height="320" webkit-playsinline playsinline>
+<video id="player" width="480" height="320" x5-video-player-type="h5"
+               x5-video-player-fullscreen="true" webkit-playsinline="true" playsinline="true">
 ```
+
+## 而且，所有异步的操作都不能引起视频的播放  
+   点击事件 然后ajax或者定时器 之后再播放视频音频是不行的~
+
 ## user-select 禁止用户选中文本
 	
 	-webkit-user-select: none; /* Chrome, Opera, Safari */
