@@ -24,6 +24,8 @@ transform: rotate3d(0, 0, 1, -360deg);
 
 采用如上方式，比较适合是body的滚动，更好的方式是不用上面的属性，因为该属性在低版本的webkit浏览器中会产生不必要的屏幕闪烁，更好的实现方式，是采用div内的滚动方式，记得阻止默认的滚动事件进行冒泡。
 
+## ios 部分机型 给body设置overflow：hidden不好用
+
 ## 阻止默认的tap颜色
 
 ```
@@ -108,3 +110,23 @@ video::-webkit-media-controls-start-playback-button {
 <code>
 	<a href="https://tstatic.toptest.yidianzixun.com.ks3-cn-beijing.ksyun.com/public/files/A7965370-6C40-4A32-BB41-486A7B77AD911495678400078.png">IOS上onscroll问题</a>
 </code>    
+
+## 关于setTimeout和setInterval
+
+ 首先我不推荐在webapp上使用setTimeout和setInterval，言外之意 慎用，初次之外单独说一下setTimeout和setIntervl区别
+ 
+``` 
+ setInterval的优点：
+
+     1. setInterval相比setTimeout计时更加准确。
+     2. 在实现一般动画时，由于能自动将动画函数插入执行队列，实现起来更方便直观，不用重复设置计时器。
+ setInterval的缺点：
+     假设我们利用setInterval设置每5ms将move函数插入执行队列中，move函数由于计算量比较大，运行时间为6ms，计时器将move函数插入执行队列后，马          上又开始计时，那么move函数还未结束，计时器将会把第二个move函数插入执行队列中，导致move函数阻塞了执行队列。此时如果move函数中没有显式取消其自      身计时器的话，甚至可能会出现死循环。因此如果插入执行队列的函数计算量大的话（或者周期太小），就不适合选用setInterval。
+setTimeout的优点：
+
+     setTimeout实现动画不会阻塞执行队列。因为setTimeout本身就是一次性的，在实现动画时，我们在move函数的结尾处需要再设置一次计时器。因此无论          setTimeout设置了多少毫秒，假设为5ms，那么在两次move函数之间都一定会间隔开至少5ms。
+setTimeout的缺点：
+     在实现一般动画时，需要在函数最后再设置一次计时器。
+
+```
+ 
