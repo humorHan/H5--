@@ -134,8 +134,9 @@ setTimeout的缺点：
  ##  输入框在页面底部的时候，弹起的虚拟输入键盘会挡住输入框--scrollIntoView完美解决
 
 ```
-着重介绍下兼容性最好的<code>scrollIntoView</code>
+着重介绍下兼容性最好的解决方案--scrollIntoView
 1、scrollIntoView(alignWithTop)  滚动浏览器窗口或容器元素，以便在当前视窗的可见范围看见当前元素。如果alignWithTop为true，或者省略它，窗口会尽可能滚动到自身顶部与元素顶部平齐。-------目前各浏览器均支持
+eg：document.getElementById("test").scrollIntoView(true);
 
 扩展： scrollIntoViewIfNeeded、scrollByLines、scrollByPages由于目前只有safari和谷歌支持，所以暂时不做详细介绍
 
