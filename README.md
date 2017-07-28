@@ -151,3 +151,10 @@ eg：document.getElementById("test").scrollIntoView(true);
    解决办法：页面加载完成后 js设置input为空
    
 ```
+## IOS上设置iOS图标  apple-touch-icon 图片自动处理成圆角和高光等效果。apple-touch-icon-precomposed 禁止系统自动添加效果，直接显示设计原图。
+iOS 图标大小在iPhone 6+上是180×180，iPhone 6 是120×120  and so on...
+适配iPhone 6+ <link rel="apple-touch-icon-precomposed" sizes="180x180" href="retinahd_icon.png">
+
+```
+
+
