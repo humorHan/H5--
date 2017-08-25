@@ -65,7 +65,7 @@ document.addEventListener("WeixinJSBridgeReady", function () {
 
 ```
 
-另外一个坑的地方是取消ios默认的播放按钮样式：
+另外一个坑的地方是在不用controls控件的时候，ios依然存在默认的播放按钮样式：以下方法取消即可~
 
 ```
 video::-webkit-media-controls-start-playback-button {
@@ -79,7 +79,11 @@ video::-webkit-media-controls-start-playback-button {
 <video id="player" width="480" height="320" x5-video-player-type="h5"
                x5-video-player-fullscreen="true" webkit-playsinline="true" playsinline="true">
 ```
+## video 微信非全屏播放模式，ios可以在设定区域播放，安卓是视频在中间播放，上下都是黑的
+````
+这个问题可以设置video height="100%"--这个就可以视频在中间播放，而且可以看到视频下层的dom
 
+```
 ## 而且，所有异步的操作都不能引起视频的播放  
    点击事件 然后ajax或者定时器 之后再播放视频音频是不行的~
 
@@ -152,9 +156,15 @@ eg：document.getElementById("test").scrollIntoView(true);
    
 ```
 ## IOS上设置iOS图标  apple-touch-icon 图片自动处理成圆角和高光等效果。apple-touch-icon-precomposed 禁止系统自动添加效果，直接显示设计原图。
+```
 iOS 图标大小在iPhone 6+上是180×180，iPhone 6 是120×120  and so on...
 适配iPhone 6+ <link rel="apple-touch-icon-precomposed" sizes="180x180" href="retinahd_icon.png">
 
 ```
-
+## 微信上，安卓机型，横向布局的H5中，竖屏旋转为横屏时(未锁屏的横屏)，末尾出现空白
+```
+ 始终也是理解不了的问题，各种调试过后，决定开大招--旋转时，动态添加需要绘制的dom元素，结果显示正常。
+ 注： 如果还是不OK，且你用了 onorientationchange 那么请自觉更改为原始方法--onresize吧，虽然查了没什么兼容问题，BUT 不换不行
+ 
+```
 
