@@ -81,8 +81,8 @@ video::-webkit-media-controls-start-playback-button {
 ```
 ## video 微信非全屏播放模式，ios可以在设定区域播放，安卓是视频在中间播放，上下都是黑的
 
-````
-这个问题可以设置video height="100%"--这个就可以视频在中间播放，而且可以看到视频下层的dom
+```
+    这个问题可以设置video height="100%"--这个就可以视频在中间播放，而且可以看到视频下层的dom
 
 ```
 ## 而且，所有异步的操作都不能引起视频的播放  
