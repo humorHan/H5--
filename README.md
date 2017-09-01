@@ -104,13 +104,15 @@ function ha(){
 ```
 
 ## X5内核监听 进入/退出全屏播放
+```
 document.getElementById('video').addEventListener("x5videoexitfullscreen", function(){
-alert("exit fullscreen")
+    alert("exit fullscreen")
 })
  
 document.getElementById('video').addEventListener("x5videoenterfullscreen", function(){
-alert("enter fullscreen")
+    alert("enter fullscreen")
 })
+```
 
 ## user-select 禁止用户选中文本
 	
