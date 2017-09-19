@@ -103,6 +103,14 @@ function ha(){
 
 ```
 
+
+## video currentTime
+
+```
+    video currentTime 微信下 全屏模式没有问题，非全屏下，安卓不好使
+
+```
+
 ## X5内核监听 进入/退出全屏播放
 ```
 document.getElementById('video').addEventListener("x5videoexitfullscreen", function(){
@@ -194,4 +202,7 @@ iOS 图标大小在iPhone 6+上是180×180，iPhone 6 是120×120  and so on...
  注： 如果还是不OK，且你用了 onorientationchange 那么请自觉更改为原始方法--onresize吧，虽然查了没什么兼容问题，BUT 不换不行
  
 ```
+
+## JS执行css3动画，百分比性能差 可能会卡顿
+  比如执行的动画中函数如下:  translate3d(10%, 0, 0),可能会卡顿，如果换成计算好的px则不会卡顿
 
