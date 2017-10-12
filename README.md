@@ -185,7 +185,7 @@ eg：document.getElementById("test").scrollIntoView(true);
 ## IOS手机上有时候input的placeholder属性不好用（不要问我什么时候，反正玩了这么久就遇到过这一次，还是时而好用时而不好用，难道是项目太大加载问题？）
 
 ```
-   IOS下某SB情况：时而placeholder好用，时而不好用，但是点击一下input就出现了placeholder的提示语，多次尝试之后怀疑系统默认认为input是非空导致（猜），然后点击之后内部触发监测input是否为空，发现是空的，然后显示了提示，这样解释也是合情合理的。（其实估计系统在渲染其他的dom等，没检测到input是否为空，我在页面首次渲染之后js设置input为空，所以可以触发对input是否为空的判断）
+   IOS下某SB情况：时而placeholder好用，时而不好用，但是点击一下input就出现了placeholder的提示语，多次尝试之后怀疑系统默认认为input是非空导致（猜），然后点击之后内部触发监测input是否为空，发现是空的，然后显示了提示，这样解释也是合情合理的。（其实估计系统在渲染其他的dom等，没检测到input是否为空，我在页面首次渲染之后js设置input为空，所以可以触发对input是否为空的判断,这时候如果进程正在被占用（或者是正在渲染页面但是没有渲染到input哪里）就执行设置input为空的话相当于没有设置，最准确的可以设置setTimeout(function(){}, 0);
    
    解决办法：页面加载完成后 js设置input为空
    
