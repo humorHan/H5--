@@ -26,7 +26,7 @@
             document.getElementById('video').play();
             document.getElementById('video').pause();
         }
-   });
+    });
 
 
 ### video的默认播放按钮问题
