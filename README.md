@@ -170,7 +170,7 @@ setTimeout的缺点：
 
 ```
  
- ##  输入框在页面底部的时候，弹起的虚拟输入键盘会挡住输入框--scrollIntoView完美解决
+## 输入框在页面底部的时候，弹起的虚拟输入键盘会挡住输入框--scrollIntoView完美解决
 
 ```
 着重介绍下兼容性最好的解决方案--scrollIntoView
