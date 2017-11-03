@@ -27,7 +27,7 @@
             document.getElementById('video').pause();
         }
     });
-
+###### 虽说是终极办法，但是其实本质和进阶办法没什么区别。
 
 ### video的默认播放按钮问题
 
