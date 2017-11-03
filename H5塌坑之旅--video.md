@@ -106,3 +106,9 @@
         alert("enter fullscreen")
 
     })
+
+### 去除视频黑边
+
+```
+    object-fit: fill
+```
