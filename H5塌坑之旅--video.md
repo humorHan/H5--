@@ -114,3 +114,12 @@
 ```
     object-fit: fill
 ```
+### video本身和poster大小不同
+
+视觉上视频宽高显示不正常(偏小)，浏览器下查看视频大小是正常的，但是其中的poster偏小
+
+```
+原因： poster的比例和视频不统一导致，猜测内部原理类似background-size: auto 100%;
+
+```
+
