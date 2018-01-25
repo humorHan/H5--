@@ -27,7 +27,7 @@
             document.getElementById('video').pause();
         }
     });
-
+###### 虽说是终极办法，但是其实本质和进阶办法没什么区别。
 
 ### video的默认播放按钮问题
 
@@ -106,3 +106,20 @@
         alert("enter fullscreen")
 
     })
+
+### 去除视频黑边
+
+可能会拉伸...其他属性值自行百度吧
+
+```
+    object-fit: fill
+```
+### video本身和poster大小不同
+
+视觉上视频宽高显示不正常(偏小)，浏览器下查看视频大小是正常的，但是其中的poster偏小,点击播放后视频宽高恢复正常
+
+```
+原因： poster的宽高比例和视频宽高比例不统一。  
+```
+猜测内部原理类似background-size: auto 100%;
+
